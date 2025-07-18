@@ -47,7 +47,7 @@ poetry install
 ## Usage Example
 
 ```python
-from zealium.core import Zealium
+from zealium import Zealium
 
 # Launch browser with stealth
 zealium = Zealium(browser="chrome", stealth_level="normal")
