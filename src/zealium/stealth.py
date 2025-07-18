@@ -7,7 +7,6 @@ class StealthToolkit:
     BASE_DIR = os.path.join(os.path.dirname(__file__), "injections")
 
     PATCHES = {
-        "base": "stealth_injection.js",
         "canvas": "spoof_canvas_fingerprint.js",
         "webgl": "spoof_webgl_precision.js",
         "toString": "override_function_toString.js",
