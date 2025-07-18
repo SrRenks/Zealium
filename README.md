@@ -112,6 +112,14 @@ zealium/
 
 ---
 
+## 🚧 Future Improvements
+
+We plan to replace the `pychrome` dependency with a custom, lightweight CDP client built from scratch. This tool will directly interact with the Chromium DevTools Protocol, offering greater control, stability, and performance, tailored specifically for stealth automation use cases.
+
+---
+
 ## Disclaimer
 
 Zealium is intended for educational and ethical automation use only. Misuse to violate terms of service or conduct unauthorized scraping may be illegal. Use responsibly.
+
+
