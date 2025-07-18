@@ -1,8 +1,3 @@
-Sure! Here's a professional README.md draft in English for your **zealium** project, focused on stealth Chromium automation, human behavior simulation, and anti-bot fingerprint evasion:
-
----
-
-
 # Zealium
 
 **Zealium** is a stealthy Chromium remote-control toolkit leveraging the Chrome DevTools Protocol with dynamic JavaScript injection to evade bot detection. It provides multi-layered anti-fingerprinting patches, human-like interaction simulation, and robust stealth capabilities for advanced browser automation.
