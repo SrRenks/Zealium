@@ -1,0 +1,28 @@
+[project]
+name = "zealium"
+version = "0.1.0"
+description = "A stealthy Chromium remote-control tool using DevTools Protocol with dynamic JS injection to evade bot detection."
+authors = [{name = "Renks"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pychrome (>=0.2.4,<0.3.0)"
+]
+
+packages = [
+  { include = "zealium", from = "src" }
+]
+
+
+include = [
+  { path = "src/zealium/injections/*.js", format = "file" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+twine = "^6.1.0"
+
