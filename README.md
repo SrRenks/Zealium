@@ -6,19 +6,19 @@
 
 ## Features
 
-- **Stealth Browser Automation:**  
+- **Stealth Browser Automation:**
   Control Chromium-based browsers (Chrome, Edge) remotely with powerful stealth techniques to bypass modern bot detection systems and CAPTCHAs.
 
-- **Dynamic JS Injection:**  
+- **Dynamic JS Injection:**
   Inject custom JavaScript patches at runtime to spoof browser fingerprints, including canvas, WebGL, audio, navigator properties, media devices, WebRTC, permissions, and more.
 
-- **Human Behavior Simulation:**  
+- **Human Behavior Simulation:**
   Simulate natural mouse movements, clicks, scrolling, and typing with randomized, non-linear patterns, hesitations, and noise to mimic real user interactions.
 
-- **Cross-Platform Support:**  
+- **Cross-Platform Support:**
   Compatible with Windows, macOS, and Linux environments, detecting browser executables and managing user profiles seamlessly.
 
-- **Customizable Stealth Levels:**  
+- **Customizable Stealth Levels:**
   Choose from multiple preset stealth configurations (`low`, `normal`, `strict`), or supply your own patch methods for tailored stealth strategies.
 
 ---
@@ -137,7 +137,7 @@ zealium/
 
 ## Future Improvements
 
-We plan to replace the `pychrome` dependency with a custom, lightweight CDP client built from scratch. This tool will directly interact with the Chromium DevTools Protocol, offering greater control, stability, and performance, tailored specifically for stealth automation use cases.
+Zealium will evolve into a fully independent project, removing the dependency on `pychrome` entirely. The future version will feature a native CDP client that communicates with Chromium via **PIPE**, enabling more robust, stealth-oriented automation. This transition will allow for finer orchestration of browser instances with improved isolation, performance, and undetectability—making Zealium a dedicated solution for secure and anonymous browser control.
 
 ---
 

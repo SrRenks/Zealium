@@ -1,6 +1,6 @@
 [project]
 name = "zealium"
-version = "0.1.3"
+version = "0.1.3post1"
 description = "A stealthy Chromium remote-control tool using DevTools Protocol with dynamic JS injection to evade bot detection."
 authors = [{name = "Renks"}]
 license = {text = "MIT"}
