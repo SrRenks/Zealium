@@ -31,6 +31,7 @@ class Zealium:
                  window_size="1280,800",
                  speed_threshold=1.0,
                  stealth_level="normal",
+                 timeout=15,
                  stealth_custom_methods=None):
 
         if browser not in ("chrome", "edge"):
@@ -46,6 +47,7 @@ class Zealium:
         self.tab = None
         self.human = None
         self.stealth_level = stealth_level
+        self.timeout = timeout
         self.stealth_custom_methods = stealth_custom_methods or []
 
         system = platform.system()
@@ -110,7 +112,7 @@ class Zealium:
 
         while True:
             try:
-                with urllib.request.urlopen(url, timeout=1) as response:
+                with urllib.request.urlopen(url, timeout=timeout) as response:
                     if response.status == 200:
                         return True
             except urllib.error.URLError as e:
@@ -140,7 +142,7 @@ class Zealium:
         ]
 
         self.chrome_proc = subprocess.Popen(flags, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        self.await_proc()
+        self.await_proc(self.timeout)
 
         self.browser = pychrome.Browser(url=f"http://127.0.0.1:{self.remote_debugging_port}")
         self.tab = self._get_active_tab()
