@@ -6,6 +6,7 @@ import subprocess
 import pychrome
 import platform
 import shutil
+import psutil
 import time
 import json
 import os
@@ -163,9 +164,26 @@ class Zealium:
             raise Exception("No tab on browser detected")
         return tabs[0]
 
+    def _terminate_process_tree(self, pid):
+        parent = psutil.Process(pid)
+        for child in parent.children(recursive=True):
+            child.terminate()
+        parent.terminate()
+        _, alive = psutil.wait_procs([parent], timeout=5)
+        for p in alive:
+            p.kill()
+
     def close(self):
         if self.tab:
             self.tab.stop()
+
         if self.chrome_proc:
-            self.chrome_proc.terminate()
-            self.chrome_proc.wait()
+            self._terminate_process_tree(self.chrome_proc.pid)
+
+
+        user_data_dir = f"{self.user_data_dir}_{self.remote_debugging_port}"
+        if os.path.exists(user_data_dir):
+            try:
+                shutil.rmtree(user_data_dir, ignore_errors=True)
+            except Exception as e:
+                print(f"[Zealium] Falha ao remover perfil: {user_data_dir} → {e}")
